@@ -1,0 +1,32 @@
+<header>
+    <mat-toolbar color="primary">Home Page</mat-toolbar>
+  </header>
+  
+  <section class="container">
+    <mat-card>
+        <div class="row">
+          <div class="col-md-7">
+              <mat-form-field class="example-form-field">
+                <input matInput type="text" placeholder="search users" [(ngModel)]="name">
+                <button mat-button *ngIf="name" matSuffix mat-icon-button aria-label="Clear" (click)="name=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+          </div>
+          <div class="col-md-2">
+            <button mat-button *ngIf="name" matSuffix mat-icon-button aria-label="search" class ="search-button" (click)="search()">
+              <mat-icon>search</mat-icon>search
+            </button>
+          </div>
+          <div class="col-md-3">
+              <button mat-raised-button color="primary" *ngIf="items.length !==0" (click)="showFollowers()">Show Followers Graph</button>
+          </div>
+        </div>
+        <mat-list role="list" *ngIf="items.length !==0">
+            <h3 mat-subheader>Total Count : {{data.total_count}}</h3>
+            <mat-list-item role="listitem" *ngFor="let item of items| slice:0:10; let i=index" (click)="showProfile(item.login)">{{item.login}}</mat-list-item>
+          </mat-list>
+    </mat-card>
+  </section>
+  
+  <footer></footer>

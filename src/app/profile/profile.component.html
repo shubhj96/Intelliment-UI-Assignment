@@ -1,0 +1,52 @@
+<header>
+    <mat-toolbar color="primary"> {{ login }}'s Profile</mat-toolbar>
+  </header>
+  
+  <section class="container">
+    <mat-card>
+        <div *ngIf="userInfo">
+          <div class="row">
+            <div class="col-md-12 center-align">
+                <img src="{{userInfo.avatar_url}}" alt="{{login}}" height="100" width="100">
+            </div>
+          </div>
+        <div class="row">
+            <div class="col-md-6 ">
+              Name : {{userInfo.name}}
+            </div>
+            <div class="col-md-6 ">
+              Company : {{userInfo.company}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+              Location : {{userInfo.location}}
+            </div>
+            <div class="col-md-6 ">
+              Email : {{userInfo.email}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+              Followers : {{userInfo.followers}}
+            </div>
+            <div class="col-md-6 ">
+              Following : {{userInfo.following}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+              Repositories :
+            </div>
+        </div>
+        <mat-list role="list" >
+            <h3 mat-subheader>Name - Description </h3>
+            <mat-list-item role="listitem" *ngFor="let repo of reposList;" >
+              * {{repo.name}} - {{repo.description}}
+            </mat-list-item>
+          </mat-list>
+        </div>
+    </mat-card>
+  </section>
+  
+  <footer></footer>
