@@ -56,6 +56,13 @@ export class ApiService {
     );
   }
 
+  saveUser(user : any) : Observable<any>{      
+    return this.http.post<any>('http://localhost:8080/api/SaveUser/', user).pipe(
+      tap(_ => console.log('saved phone')),
+      catchError(this.handleError<any>(`save user=${user.name}`))
+    );              
+  }  
+
   
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

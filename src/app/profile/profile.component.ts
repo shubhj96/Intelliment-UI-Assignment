@@ -57,4 +57,15 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  public saveUser = function(){
+    this.api.saveUser(this.userInfo)
+    .subscribe(res => {
+      console.log("user saved");
+      this.isLoadingResults = false;
+    }, err => {
+      console.log(err);
+      this.isLoadingResults = false;
+    });
+  }
+
 }

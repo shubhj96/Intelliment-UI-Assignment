@@ -1,0 +1,11 @@
+steps to run the project
+
+* open cmd and run npm install - this will install all the dependencies
+* navigate to localhost:4200 in your browser
+* it will ask for login if you are not logged in else it show a button to navigate to home page
+* at the login page you can signup using any credentials, and once you signup you can use those credentials next time for login (no need to signup again)
+* at home page you need to type any user name then the search button will appear
+* when you click on search button the list of user will populate
+* on selecting any user you will be navigated to user profile page
+* on clicking on followers graph will take you to the followers bar graph
+* at profile page when you click on save user this will save the user to database
